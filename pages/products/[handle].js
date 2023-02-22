@@ -154,7 +154,7 @@ export async function getStaticPaths() {
   const paths = await getAllProductPaths()
   return {
     paths: paths.map((path) => `/products/${path}`),
-    fallback: 'blocking',
+    fallback: false,
   }
 }
   
