@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { getAllProducts } from '../lib/shopify'
 
 
 

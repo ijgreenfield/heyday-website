@@ -15,7 +15,7 @@ export default function ImageCarousel({ images }) {
                     <SwiperSlide key={item.node.id}>
                         <Image 
                             src={image.src}
-                            alt={image.altText}
+                            alt={image.altText || 'alt text'}
                             fill
                             priority
                             
