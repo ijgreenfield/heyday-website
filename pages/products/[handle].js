@@ -4,10 +4,10 @@ import {
 } from '../../lib/shopify/operations'
 import { getProduct } from '../../lib/shopify/index'
 import Container from '../../components/atoms/Container';
-import Review from '../../components/organisms/ProductReviews/Review';
 import ReviewsUI from '../../components/organisms/ProductReviews';
 import ReactStars from 'react-stars';
 import { Disclosure, Listbox  } from '@headlessui/react';
+import { useRouter } from 'next/router';
 
 
 const people = [
@@ -35,6 +35,11 @@ export default function ProductPage({ product }) {
         description: 'Yes! You can purchase a license that you can share with your entire team.'
       },
     ]
+
+    const router = useRouter()
+    if (!router.isFallback && !product) {
+        return <ErrorPage statusCode={404} />
+    }
 
     return (
       <div className=''>
