@@ -121,10 +121,13 @@ export default function ProductPage({ product }) {
         {/* Treatment Room Tip */}
         <div className='bg-[#333f48] text-white py-10'>
           <Container>
-            <div className='text-center flex flex-col gap-y-14'>
+            { product.treatmentRoomCopy?.value || 'null' ?
+              <div className='text-center flex flex-col gap-y-14'>
               <span>• FROM THE TREATMENT ROOM •</span>
-              <p className='text-2xl'>{product.treatmentRoomCopy.value}</p>
+              <p className='text-2xl'>{product.treatmentRoomCopy?.value}</p>
             </div>
+            : "hi"
+            }
           </Container>
         </div>
 
