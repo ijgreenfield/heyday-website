@@ -19,6 +19,7 @@ export default function Header() {
                         src="https://cdn.shopify.com/s/files/1/1704/8471/files/hdr_logo.png?v=1613771416"
                         width={60}
                         height={20}
+                        alt="Heyday Logo"
                     />
                 </div>
                 <div className="flex grow justify-end basis-0">

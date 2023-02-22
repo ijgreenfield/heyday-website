@@ -40,6 +40,7 @@ export default function Footer() {
                             <Image 
                                 src="https://cdn.shopify.com/s/files/1/1704/8471/files/01-04_1080x.jpg?v=1614291015"
                                 fill
+                                alt="alt text"
                             />
                         </Link>
                         <p className="mt-3">Instagram</p>
@@ -54,7 +55,7 @@ export default function Footer() {
                         </div>
                         <div className="flex flex-col gap-3">
                             {legallinks.map(link => (
-                                <Link href={link.link}>{link.name}</Link>
+                                <Link href={link.link} key={link.name}>{link.name}</Link>
                             ))}
                         </div>
                     </div>
