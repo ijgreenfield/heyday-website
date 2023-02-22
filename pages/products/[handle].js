@@ -8,6 +8,7 @@ import ReviewsUI from '../../components/organisms/ProductReviews';
 import ReactStars from 'react-stars';
 import { Disclosure, Listbox  } from '@headlessui/react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 
 const people = [
@@ -25,14 +26,14 @@ export default function ProductPage({ product }) {
       { name: `${product.keyIngOneName.value}`,
         description: `${product.keyIngOneInfo.value}`
       },
-      { name: 'Coconut Milk',
-        description: 'Yes! You can purchase a license that you can share with your entire team.'
+      { name: `${product.keyIngTwoName.value}`,
+        description: `${product.keyIngTwoInfo.value}`
       },
-      { name: 'Ginger',
-        description: 'Yes! You can purchase a license that you can share with your entire team.'
+      { name: `${product.keyIngThreeName.value}`,
+        description: `${product.keyIngThreeInfo.value}`
       },
       { name: 'Full Ingredient List',
-        description: 'Yes! You can purchase a license that you can share with your entire team.'
+        description: `${product.fullIngList.value}`
       },
     ]
 
@@ -42,6 +43,11 @@ export default function ProductPage({ product }) {
     }
 
     return (
+      <>
+      <Head>
+        <title>{product.seo.title}</title>
+        <meta name="description" content={product.seo.description}></meta>
+      </Head>
       <div className=''>
         <div className='h-96 w-full relative'>
           <ImageCarousel images={images}/>
@@ -139,6 +145,7 @@ export default function ProductPage({ product }) {
           <ReviewsUI />
         </Container>
       </div>
+      </>
     )
 }
 
@@ -157,7 +164,7 @@ export async function getStaticPaths() {
   const paths = await getAllProductPaths()
   return {
     paths: paths.map((path) => `/products/${path}`),
-    fallback: false,
+    fallback: "blocking",
   }
 }
   
