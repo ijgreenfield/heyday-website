@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/shopify/index.js", "lib/shopify/index.js", "pages/index.js", "pages/index.js", "pages/product/[handle].js"],
   "exclude": ["node_modules"]
 }
