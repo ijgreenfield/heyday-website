@@ -29,8 +29,8 @@ export default function ProductPage({ product }) {
       { name: `${product.keyIngTwoName.value}`,
         description: `${product.keyIngTwoInfo.value}`
       },
-      { name: `${product.keyIngThreeName.value}`,
-        description: `${product.keyIngThreeInfo.value}`
+      { name: `${product.keyIngThreeName?.value}`,
+        description: `${product.keyIngThreeInfo?.value}`
       },
       { name: 'Full Ingredient List',
         description: `${product.fullIngList.value}`
