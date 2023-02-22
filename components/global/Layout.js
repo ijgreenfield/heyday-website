@@ -9,7 +9,6 @@ const cadiz = localFont({ src: '../../public/fonts/Cadiz.woff2'})
 export default function Layout({ children }) {
     return (
         <div className={cadiz.className}>
-            <AnnouncementBar />
             <Header />
             <main>
                 {children}

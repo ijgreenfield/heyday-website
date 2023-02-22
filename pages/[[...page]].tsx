@@ -60,7 +60,9 @@ export default function Page({
   return (
     <>
       <Head>
+        <title>{page.data.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={page.data.description}></meta>
       </Head>
       
       <BuilderComponent model="page" content={page} />
