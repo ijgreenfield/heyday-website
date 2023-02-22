@@ -28,7 +28,7 @@ export default function Footer() {
                 <div className="py-12">
                     <div className="flex flex-wrap">
                         {navLinks.map(navLink => (
-                            <Link href={navLink.link} className='basis-3/6 py-3'>{navLink.name}</Link>
+                            <Link href={navLink.link} className='basis-3/6 py-3' key={navLink.name}>{navLink.name}</Link>
                         ))}
                     </div>
                     <div className="max-w-[50%] text-lg mt-4 text-[#989ea3]">
