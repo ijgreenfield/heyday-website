@@ -23,17 +23,17 @@ export default function ProductPage({ product }) {
     const images = product.images.edges;
 
     const sampleIngredients = [
-      { name: `${product.keyIngOneName.value}`,
-        description: `${product.keyIngOneInfo.value}`
+      { name: `${product.keyIngOneName?.value}`,
+        description: `${product.keyIngOneInfo?.value}`
       },
-      { name: `${product.keyIngTwoName.value}`,
-        description: `${product.keyIngTwoInfo.value}`
+      { name: `${product.keyIngTwoName?.value}`,
+        description: `${product.keyIngTwoInfo?.value}`
       },
       { name: `${product.keyIngThreeName?.value}`,
         description: `${product.keyIngThreeInfo?.value}`
       },
       { name: 'Full Ingredient List',
-        description: `${product.fullIngList.value}`
+        description: `${product.fullIngList?.value}`
       },
     ]
 
@@ -61,7 +61,7 @@ export default function ProductPage({ product }) {
               </div>
               <div className='flex flex-col gap-3 mb-4'>
                 <h3>{product.title}</h3>
-                <p>{product.shortDescription.value}</p>
+                <p>{product.shortDescription?.value}</p>
               </div>
               <div className='flex gap-x-2'>
                 <ReactStars 
