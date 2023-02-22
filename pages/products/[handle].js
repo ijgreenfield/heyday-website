@@ -97,7 +97,7 @@ export default function ProductPage({ product }) {
                 <span className='pb-2.5 font-bold'>The Ingredients That Make A Difference</span>
                 <div>
                   {sampleIngredients.map(ing => (
-                    <Disclosure>
+                    <Disclosure key={ing.name}>
                       <div className='border-b border-[#333f48]'>
                         <Disclosure.Button className="py-4 text-lg">
                           {ing.name}
