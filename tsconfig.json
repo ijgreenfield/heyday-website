@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/shopify/index.js", "lib/shopify/index.js", "pages/[[...page]].tsxe]].pages/[[...page]].tsx[...page]].tsx", "pages/product/[handle].js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/shopify/index.js", "lib/shopify/index.js", "pages/[[...page]].tsxe]].pages/[[...page]].tsx[...page]].tsx", "pages/product/[handle].js", "components/organisms/Sidebar.tsxx"],
   "exclude": ["node_modules"]
 }

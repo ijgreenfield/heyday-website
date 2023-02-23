@@ -4,6 +4,7 @@ import { Bars2Icon } from '@heroicons/react/24/outline'
 import AnnouncementBar from "../molecules/AnnouncementBar";
 
 export default function Header() {
+
     return (
         <div className="">
             <AnnouncementBar />
