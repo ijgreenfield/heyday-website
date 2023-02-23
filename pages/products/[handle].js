@@ -67,11 +67,11 @@ export default function ProductPage({ product, reviews }) {
                 <p className='text-lg'>{product.shortDescription?.value}</p>
               </div>
               <div className='flex gap-x-2'>
-                <ReactStars 
+                {/*<ReactStars 
                   count={5}
                   value={5}
                   size={16}
-                />
+                />*/}
                 <span>2 Reviews</span>
               </div>
             </div>

@@ -18,11 +18,11 @@ export default function Review({review, user}) {
                             { review.verified_buyer && <span>Verified Buyer</span>}
                         </div>
                         <div>
-                            <ReactStars 
+                            {/*<ReactStars 
                                 count={5}
                                 size={16}
                                 value={review.score}
-                            />
+                            />*/}
                         </div>
                     </div>
                 </div>
