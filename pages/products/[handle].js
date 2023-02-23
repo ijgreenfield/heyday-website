@@ -4,11 +4,12 @@ import {
 } from '../../lib/shopify/operations'
 import { getProduct } from '../../lib/shopify/index'
 import Container from '../../components/atoms/Container';
-import ReviewsUI from '../../components/organisms/ProductReviews';
+import Review from '../../components/organisms/ProductReviews/Review';
 import ReactStars from 'react-stars';
 import { Disclosure, Listbox  } from '@headlessui/react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { getProductReviews } from '../../lib/yotpo/operations';
 
 
 const people = [
@@ -19,7 +20,9 @@ const people = [
   { id: 5, name: 'Katelyn Rohan', unavailable: false },
 ]
 
-export default function ProductPage({ product }) {
+export default function ProductPage({ product, reviews }) {
+    const splitId = product.id.split('Product/')
+    const yotpoId = splitId[1]
     const images = product.images.edges;
 
     const sampleIngredients = [
@@ -61,7 +64,7 @@ export default function ProductPage({ product }) {
               </div>
               <div className='flex flex-col gap-3 mb-4'>
                 <h3>{product.title}</h3>
-                <p>{product.shortDescription?.value}</p>
+                <p className='text-lg'>{product.shortDescription?.value}</p>
               </div>
               <div className='flex gap-x-2'>
                 <ReactStars 
@@ -102,7 +105,7 @@ export default function ProductPage({ product }) {
 
             <div className='flex flex-col gap-y-6'>
               <div>
-                <p>{product.description}</p>
+                <p className='text-lg'>{product.description}</p>
               </div>
               <div>
                 <span className='pb-2.5 font-bold'>The Ingredients That Make A Difference</span>
@@ -155,10 +158,12 @@ export default function ProductPage({ product }) {
 
         {/* Reviews */}
         <Container>
-          <ReviewsUI />
-          <ReviewsUI />
-          <ReviewsUI />
-          <ReviewsUI />
+          {reviews.reviews.map(review => {
+            const { user } = review;
+            return (
+              <Review review={review} user={user} key={review.id} />
+            )
+          })}
         </Container>
       </div>
       </>
@@ -167,11 +172,14 @@ export default function ProductPage({ product }) {
 
 export async function getStaticProps({params}) {
     const { body } = await getProduct(params?.handle)
+    const { response }= await getProductReviews('10785253775')
     const product = body.data.product;
+    const reviews = response;
 
     return {
       props: {
         product: product || null,
+        reviews: reviews || null
       },
     }
 }
