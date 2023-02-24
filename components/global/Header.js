@@ -2,6 +2,7 @@ import Image from "next/image";
 import UserNav from '../molecules/UserNav'
 import { Bars2Icon } from '@heroicons/react/24/outline'
 import AnnouncementBar from "../molecules/AnnouncementBar";
+import Link from "next/link";
 
 export default function Header() {
 
@@ -19,12 +20,14 @@ export default function Header() {
                         />
                     </div>
                     <div className="flex grow justify-center basis-0">
-                        <Image 
-                            src="https://cdn.shopify.com/s/files/1/1704/8471/files/hdr_logo.png?v=1613771416"
-                            width={60}
-                            height={20}
-                            alt="Heyday Logo"
-                        />
+                        <Link href="/">
+                            <Image 
+                                src="https://cdn.shopify.com/s/files/1/1704/8471/files/hdr_logo.png?v=1613771416"
+                                width={60}
+                                height={20}
+                                alt="Heyday Logo"
+                            />
+                        </Link>
                     </div>
                     <div className="flex grow justify-end basis-0">
                     <UserNav />
