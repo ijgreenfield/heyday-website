@@ -2,7 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 
-export default function LocationCard() {
+export default function LocationCard({shop}) {
+    console.log(shop)
   return (
     <div className='border border-[#333f48] w-full'>
         <div className='relative w-full h-96'>
@@ -15,8 +16,8 @@ export default function LocationCard() {
         <div className='p-6'>
             <div className='flex flex-col gap-4'>
                 <div className='mb-4'>
-                    <h3>Lincoln Plaza</h3>
-                    <p>6378 N. Scottsdale Rd. Scottsdale, AZ 85253</p>
+                    <h3>{shop.name}</h3>
+                    <p>{shop.data.address}</p>
                 </div>
                 <div>
                     <p>310-986-8661</p>

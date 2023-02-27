@@ -11,14 +11,14 @@ const legallinks = [
 ]
 
 const navLinks = [
-    { name: 'About', link: '/'},
-    { name: 'FAQ', link: '/'},
-    { name: 'Franchising', link: '/'},
-    { name: 'Locations', link: '/'},
-    { name: 'Membership', link: '/'},
-    { name: 'Careers', link: '/'},
-    { name: 'Gift Cards', link: '/'},
-    { name: 'Contact', link: '/'},
+    { name: 'About', link: '/about'},
+    { name: 'FAQ', link: 'https://help.heydayskincare.com'},
+    { name: 'Franchising', link: 'https://franchising.heydayskincare.com'},
+    { name: 'Locations', link: '/locations'},
+    { name: 'Membership', link: '/membership'},
+    { name: 'Careers', link: '/careers'},
+    { name: 'Gift Cards', link: '/collections/gift-cards'},
+    { name: 'Contact', link: '/contact'},
 ]
 
 export default function Footer() {
@@ -49,7 +49,7 @@ export default function Footer() {
             </Container>
             <div className="bg-[#333f48] text-white py-12">
                 <Container>
-                    <div className="max-w-7xl flex flex-col gap-10 md:mx-auto md:flex-row md:justify-between">
+                    <div className="max-w-7xl flex flex-col gap-10 text-sm md:mx-auto md:flex-row md:justify-between">
                         <div>
                             <span>Heyday Wellness LLC. All rights reserved 2023.</span>
                         </div>

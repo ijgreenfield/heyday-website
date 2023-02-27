@@ -35,7 +35,7 @@ export default function Locations({ location }) {
                         <div className="grid grid-cols-3 gap-8">
                             {results[key].map(shop => {
                                 return (
-                                    <LocationCard />
+                                    <LocationCard shop={shop}/>
                                 )
                             }).sort()}
                         </div>
