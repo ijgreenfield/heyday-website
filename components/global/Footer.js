@@ -25,7 +25,7 @@ export default function Footer() {
     return (
         <footer className="border-t border-[#333f48]">
             <Container>
-                <div className="py-12">
+                <div className="py-12 md:max-w-7xl md:mx-auto">
                     <div className="flex flex-wrap">
                         {navLinks.map(navLink => (
                             <Link href={navLink.link} className='basis-3/6 py-3' key={navLink.name}>{navLink.name}</Link>
@@ -49,11 +49,11 @@ export default function Footer() {
             </Container>
             <div className="bg-[#333f48] text-white py-12">
                 <Container>
-                    <div className="flex flex-col gap-10">
+                    <div className="max-w-7xl flex flex-col gap-10 md:mx-auto md:flex-row md:justify-between">
                         <div>
                             <span>Heyday Wellness LLC. All rights reserved 2023.</span>
                         </div>
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 md:flex-row">
                             {legallinks.map(link => (
                                 <Link href={link.link} key={link.name}>{link.name}</Link>
                             ))}

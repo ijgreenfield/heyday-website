@@ -1,5 +1,6 @@
 import {Fragment} from 'react'
 import '@/styles/globals.css'
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { builder } from '@builder.io/react'
 import Layout from '../components/global/Layout'
 import type { AppProps } from 'next/app'
