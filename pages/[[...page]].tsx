@@ -4,10 +4,6 @@ import { BuilderComponent, builder, useIsPreviewing } from '@builder.io/react'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
 
-// put your Public API Key you copied from Builder.io here
-const BUILDER_API_KEY = 'ea37859a8c60492897e611f94cbde782'
-builder.init(BUILDER_API_KEY)
-
 export async function getStaticProps({
   params,
 }: GetStaticPropsContext<{ page: string[] }>) {
