@@ -27,7 +27,7 @@ export default function Header() {
                     <div className="flex items-center">
                         <div className="flex grow justify-start basis-0">
                             <div className="flex gap-12 text-sm">
-                                {Links.map(link => <Link href={link.link} onMouseEnter={() => setOpen(true)}>{link.name}</Link>)}
+                                {Links.map(link => <p onMouseEnter={() => setOpen(true)}>{link.name}</p>)}
                             </div>
                             <Bars2Icon 
                                 height={24}
@@ -49,7 +49,7 @@ export default function Header() {
                         </div>
                         <div className="flex grow items-center justify-end basis-0 gap-4">
                             {/* Create button component */}
-                            <button className="bg-[#105368] py-2 px-6 rounded-lg text-white">Book A Facial</button>
+                            <button className="bg-[#105368] py-2 px-6 rounded-lg text-white text-sm font-normal">Book A Facial</button>
                             <UserNav />
                         </div>
                     </div>

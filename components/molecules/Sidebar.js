@@ -15,7 +15,8 @@ export default function Sidebar({isOpen, onDismiss }) {
                   top: 0,
                   left: 0,
                   height: '100%',
-                  zIndex: '999'
+                  zIndex: '999',
+                  background: '#fff'
                 },
             }}
             contentTransition={{
