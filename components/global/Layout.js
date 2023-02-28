@@ -1,5 +1,5 @@
 import AnnouncementBar from "../molecules/AnnouncementBar";
-import Header from "../global/Header"
+import Header from "./Header/Header"
 import Footer from "../global/Footer"
 import localFont from '@next/font/local'
 

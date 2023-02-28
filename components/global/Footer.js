@@ -25,25 +25,14 @@ export default function Footer() {
     return (
         <footer className="border-t border-[#333f48]">
             <Container>
-                <div className="py-12 md:max-w-7xl md:mx-auto">
-                    <div className="flex flex-wrap">
+                <div className="py-12 md:max-w-7xl mx-auto">
+                    <div className="flex flex-wrap text-sm max-w-lg">
                         {navLinks.map(navLink => (
-                            <Link href={navLink.link} className='basis-3/6 py-3' key={navLink.name}>{navLink.name}</Link>
+                            <Link href={navLink.link} className='basis-3/6 py-3 hover:text-[#ca9a8e]' key={navLink.name}>{navLink.name}</Link>
                         ))}
                     </div>
-                    <div className="max-w-[50%] text-lg mt-4 text-[#989ea3]">
+                    <div className="max-w-[50%] text-lg mt-4 text-[#989ea3] md:mt-12">
                         <p>Skincare Without Second Guessing</p>
-                    </div>
-                    <div className="mt-12">
-                        <Link href="/" className="flex mb-3">#heydayhabit</Link>
-                        <Link href="/" className="flex relative w-full h-[330px]">
-                            <Image 
-                                src="https://cdn.shopify.com/s/files/1/1704/8471/files/01-04_1080x.jpg?v=1614291015"
-                                fill
-                                alt="alt text"
-                            />
-                        </Link>
-                        <p className="mt-3">Instagram</p>
                     </div>
                 </div>
             </Container>
