@@ -27,7 +27,7 @@ export default function Header() {
                     <div className="flex items-center">
                         <div className="flex grow justify-start basis-0">
                             <div className="flex gap-12 text-sm">
-                                {Links.map(link => <Link href={link.link} onMouseOver={() => setOpen(true)}>{link.name}</Link>)}
+                                {Links.map(link => <Link href={link.link} onMouseEnter={() => setOpen(true)}>{link.name}</Link>)}
                             </div>
                             <Bars2Icon 
                                 height={24}
