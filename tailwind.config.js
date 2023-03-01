@@ -9,6 +9,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'maison': ['MaisonNeue Book', 'sans-serif'],
+      'maison-mono': ['MaisonNeue Mono']
+    },
     extend: {},
   },
   plugins: [],

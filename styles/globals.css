@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities; 
 
+@font-face {
+  font-family: 'MaisonNeue Book';
+  src: url('https://cdn.shopify.com/s/files/1/1704/8471/t/506/assets/MaisonNeueBook.woff2?v=160879981933109394541674747215')
+}
+
+@font-face {
+  font-family: 'MaisonNeue Mono';
+  src: url('https://cdn.shopify.com/s/files/1/1704/8471/t/506/assets/MaisonNeueMono.woff2?v=77666011852389861391674747218')
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

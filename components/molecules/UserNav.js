@@ -6,7 +6,7 @@ import { MagnifyingGlassIcon, UserIcon, ShoppingBagIcon } from '@heroicons/react
 export default function UserNav() {
    
     return (
-        <div className='flex gap-3'>
+        <div className='flex gap-3 md:gap-6'>
             <MagnifyingGlassIcon 
                 height={24}
                 width={24}

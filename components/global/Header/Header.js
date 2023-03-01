@@ -26,8 +26,8 @@ export default function Header() {
                 <Container>
                     <div className="flex items-center">
                         <div className="flex grow justify-start basis-0">
-                            <div className="flex gap-12 text-sm">
-                                {Links.map(link => <p onMouseEnter={() => setOpen(true)}>{link.name}</p>)}
+                            <div className="md:flex gap-12 text-sm hidden">
+                                {Links.map(link => <p key={link.name}>{link.name}</p>)}
                             </div>
                             <Bars2Icon 
                                 height={24}
@@ -36,7 +36,8 @@ export default function Header() {
                                 color="#35383D"
                                 className="md:hidden"
                             />
-                            <Sidebar isOpen={isOpen} onDismiss={onDismiss}/>
+                            
+                            {/*<Sidebar isOpen={isOpen} onDismiss={onDismiss}/>*/}
                         </div>
                         <div className="flex grow justify-center basis-0">
                             <Link href="/" className="relative w-20 h-10">
@@ -47,9 +48,9 @@ export default function Header() {
                                 />
                             </Link>
                         </div>
-                        <div className="flex grow items-center justify-end basis-0 gap-4">
+                        <div className="flex grow items-center justify-end basis-0 md:gap-8">
                             {/* Create button component */}
-                            <button className="bg-[#105368] py-2 px-6 rounded-lg text-white text-sm font-normal">Book A Facial</button>
+                            <button className="hidden md:block bg-[#105368] py-2 px-6 rounded-lg text-white text-sm font-normal">Book A Facial</button>
                             <UserNav />
                         </div>
                     </div>

@@ -27,9 +27,9 @@ export default function LocationCard({shop}) {
                     <p>Now Open!</p>
                 </div>
                 {/* May be worth refactoring these */}
-                <div className='flex flex-col gap-3'>
-                    <Link href='/' className='w-full border border-[#333f48] text-center py-2.5'>Book Now</Link>
-                    <Link href='/' className='w-full border border-[#333f48] text-center py-2.5'>Learn More</Link>
+                <div className='flex flex-col gap-4'>
+                    <Link href='/' className='w-full border border-[#333f48] text-center py-2.5 hover:bg-[#333f48] hover:text-white'>Book Now</Link>
+                    <Link href={`/locations/${shop.data.slug}`} className='w-full border border-[#333f48] text-center py-2.5 hover:bg-[#333f48] hover:text-white'>Learn More</Link>
                 </div>
             </div>
         </div>
