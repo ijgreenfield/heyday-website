@@ -22,7 +22,6 @@ const people = [
 
 export default function ProductPage({ product, reviews }) {
     const splitId = product.id.split('Product/')
-    const yotpoId = splitId[1]
     const images = product.images.edges;
 
     const sampleIngredients = [
@@ -48,8 +47,8 @@ export default function ProductPage({ product, reviews }) {
     return (
       <>
       <Head>
-        <title>{product.seo.title}</title>
-        <meta name="description" content={product.seo.description}></meta>
+        <title>{product.seo?.title}</title>
+        <meta name="description" content={product.seo?.description}></meta>
       </Head>
       <div className=''>
         <div className='h-96 w-full relative'>
@@ -105,19 +104,19 @@ export default function ProductPage({ product, reviews }) {
 
             <div className='flex flex-col gap-y-6'>
               <div>
-                <p className='text-lg'>{product.description}</p>
+                <p className='text-lg'>{product?.description}</p>
               </div>
               <div>
                 <span className='pb-2.5 font-bold'>The Ingredients That Make A Difference</span>
                 <div>
                   {sampleIngredients.map(ing => (
-                    <Disclosure key={ing.name}>
+                    <Disclosure key={ing?.name}>
                       <div className='border-b border-[#333f48]'>
                         <Disclosure.Button className="py-4 text-lg">
-                          {ing.name}
+                          {ing?.name}
                         </Disclosure.Button>
                         <Disclosure.Panel className="text-gray-500 py-4">
-                          {ing.description}
+                          {ing?.description}
                         </Disclosure.Panel>
                       </div>
                     </Disclosure>
@@ -158,7 +157,7 @@ export default function ProductPage({ product, reviews }) {
 
         {/* Reviews */}
         <Container>
-          {reviews.reviews.map(review => {
+          {reviews?.reviews.map(review => {
             const { user } = review;
             return (
               <Review review={review} user={user} key={review.id} />

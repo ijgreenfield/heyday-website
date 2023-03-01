@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function ProductCard({ product }) {
-    console.log(product)
     return (
         <Link href={`/products/${product.handle}`} className='grow'>
             <div className="w-full h-72 relative">
