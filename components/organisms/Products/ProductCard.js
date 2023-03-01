@@ -5,7 +5,7 @@ export default function ProductCard({ product }) {
     return (
         <Link href={`/products/${product.handle}`} className='grow'>
             <div className="w-full h-72 relative">
-                <Image src={product.images[0].src} fill/>
+                <Image src={product.images[0]?.src} fill/>
             </div>
             <div className="flex flex-col grow">
                 <div className="grow">

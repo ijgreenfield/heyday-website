@@ -5,7 +5,6 @@ import {
 import { getProduct } from '../../lib/shopify/index'
 import Container from '../../components/atoms/Container';
 import Review from '../../components/organisms/ProductReviews/Review';
-import ReactStars from 'react-stars';
 import { Disclosure, Listbox  } from '@headlessui/react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
