@@ -3,7 +3,6 @@ import Image from 'next/image'
 import React from 'react'
 
 export default function LocationCard({shop}) {
-    console.log(shop)
   return (
     <div className='border border-[#333f48] w-full'>
         <div className='relative w-full h-96'>

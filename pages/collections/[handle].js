@@ -2,7 +2,6 @@ import ProductCard from "../../components/organisms/Products/ProductCard";
 import { getAllCollectionPaths, getCollection } from "../../lib/shopify/operations";
 
 export default function Handle({collection}) {
-    const { products } = collection
     return (
         <div className="max-w-7xl mx-auto md:py-8">
             <div>
