@@ -9,7 +9,7 @@ import Sidebar from '../../molecules/Sidebar'
 import SearchWrapper from "@/components/organisms/ProductSearch/SearchWrapper";
 
 export default function Header() {
-    const [isSearchOpen, setIsSearchOpen] = useState(true)
+    const [isSearchOpen, setIsSearchOpen] = useState(false)
     const onSearchOpen = () => setIsSearchOpen(true)
     const onSearchClose = () => setIsSearchOpen(false)
 
