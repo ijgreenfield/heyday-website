@@ -6,10 +6,12 @@ import AnnouncementBar from "../../molecules/AnnouncementBar";
 import Link from "next/link";
 import Container from "../../atoms/Container";
 import Sidebar from '../../molecules/Sidebar'
+import SearchWrapper from "@/components/organisms/ProductSearch/SearchWrapper";
 
 export default function Header() {
-    const [isOpen, setOpen] = useState(false);
-    const onDismiss = () => setOpen(false)
+    const [isSearchOpen, setIsSearchOpen] = useState(true)
+    const onSearchOpen = () => setIsSearchOpen(true)
+    const onSearchClose = () => setIsSearchOpen(false)
 
     const Links = [
         { name: 'Shop', link: '/collections/all', sidebar: []},
@@ -36,7 +38,6 @@ export default function Header() {
                                 color="#35383D"
                                 className="md:hidden"
                             />
-                            
                             {/*<Sidebar isOpen={isOpen} onDismiss={onDismiss}/>*/}
                         </div>
                         <div className="flex grow justify-center basis-0">
@@ -51,11 +52,12 @@ export default function Header() {
                         <div className="flex grow items-center justify-end basis-0 md:gap-8">
                             {/* Create button component */}
                             <button className="hidden md:block bg-[#105368] py-2 px-6 rounded-lg text-white text-sm font-normal">Book A Facial</button>
-                            <UserNav />
+                            <UserNav onSearchOpen={onSearchOpen}/>
                         </div>
                     </div>
                 </Container>
             </header>
+            <SearchWrapper isSearchOpen={isSearchOpen} onSearchClose={onSearchClose}/>
         </div>
     )
 }
