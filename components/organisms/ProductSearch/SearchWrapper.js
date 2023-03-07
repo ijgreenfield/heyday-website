@@ -4,7 +4,7 @@ export default function SearchWrapper({onSearchClose, isSearchOpen}) {
 
   return (
     <div className={`w-full fixed h-screen bg-white top-0 z-20 max-h-[41rem] border-b border-[#333f48] ${isSearchOpen ? 'visible' : 'hidden'}`} >
-      <div className='max-w-[62.25rem] mx-auto py-14'>
+      <div className='max-w-[62.25rem] mx-auto py-14 px-5 sm:px-14'>
         <div className='text-center flex flex-col gap-6'>
           <input type='text' placeholder="I'm looking for..." className='border-b border-[#c6a992] w-full text-center pb-4 text-2xl font-thin'/>
           <div className='text-sm flex justify-center gap-1'>

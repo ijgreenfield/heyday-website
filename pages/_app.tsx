@@ -13,9 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Layout>
+      <Script async src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UFdULB' />
         <Component {...pageProps} />
       </Layout>
-      <Script async src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UFdULB' />
     </>
   )
 }
