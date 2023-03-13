@@ -16,17 +16,17 @@ export default {
     },
     Mutations: {
         createAccessToken: gql`
-            mutation CustomerAccessTokenCreate($email: String!, $password: String!) {
-                customerAccessTokenCreate(email: $email, password: $password) {
+            mutation CustomerAccessTokenCreate($input: CustomerAccessTokenCreateInput!) {
+                customerAccessTokenCreate(input: $input) {
                     customerAccessToken {
-                      # CustomerAccessToken fields
+                      accessToken
                     }
                     customerUserErrors {
-                      # CustomerUserError fields
+                      message
                     }
                 }
             }
         `
     },
-    Subscriptions: {}
+    Subscriptions: {},
 }
