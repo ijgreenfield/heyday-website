@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 import { signIn } from 'next-auth/react'
 import Head from 'next/head'
+import Link from 'next/link'
 import React from 'react'
 
 export default function LogIn() {
@@ -55,7 +56,7 @@ export default function LogIn() {
                     </form>
                     {/* End Login Form */}
                     <div className='mt-6 mb-8 text-[#989ea3]'>
-                      <p className=' text-xs'>Don't have an account? <span className='underline'>Create one.</span></p>
+                      <p className=' text-xs'>Don't have an account? <Link href="/account/register" className='underline'>Create one.</Link></p>
                     </div>
                   </div>
                 </div>

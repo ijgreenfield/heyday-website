@@ -41,7 +41,7 @@ export default function Header() {
                             {/*<Sidebar isOpen={isOpen} onDismiss={onDismiss}/>*/}
                         </div>
                         <div className="flex grow justify-center basis-0">
-                            <Link href="/" className="relative w-20 h-10">
+                            <Link href="/" className="relative w-16 h-8">
                                 <Image 
                                     src="https://cdn.shopify.com/s/files/1/1704/8471/files/hdr_logo.png?v=1613771416"
                                     fill

@@ -9,7 +9,6 @@ export default function Account() {
 
   if (session) {
     return <Profile customer={customer}/>
-
   } else {
     return <LogIn />
   }
