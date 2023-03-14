@@ -1,23 +1,17 @@
 import React from 'react'
+import { useSession, signIn, signOut } from "next-auth/react"
+import Profile from '../../components/Account/Dashboard';
+import LogIn from '../../components/Account/LogIn';
 
 export default function Account() {
-  return (
-    <div className='flex'>
-        <div className='bg-[#f8f4f0] w-1/4 p-16'>
-            <div>
-                <h3>Hi, Timy</h3>
-                <nav>
-                    <ul>
-                        <li>Personal Info</li>
-                        <li>Order History</li>
-                        <li>Sign Out</li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div>
+  const { data:session } = useSession();
+  const customer = session?.user.data.customer;
 
-        </div>
-    </div>
-  )
+  if (session) {
+    return <Profile customer={customer}/>
+
+  } else {
+    return <LogIn />
+  }
+
 }

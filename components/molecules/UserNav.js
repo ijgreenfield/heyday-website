@@ -2,10 +2,10 @@
 // Ideally, these components should represent the most imporant actions we want our users to take and have access to.
 
 import { MagnifyingGlassIcon, UserIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 import SearchWrapper from '../organisms/ProductSearch/SearchWrapper'
 
 export default function UserNav({onSearchOpen}) {
-   
     return (
         <div>
             <div className='flex gap-3 md:gap-6'>
@@ -17,12 +17,15 @@ export default function UserNav({onSearchOpen}) {
                     onClick={onSearchOpen}
                     cursor='pointer'
                 />
-                <UserIcon 
-                    height={24}
-                    width={24}
-                    strokeWidth={1}
-                    color="#35383D"
-                />
+                <Link href="/account">
+                    <UserIcon 
+                        height={24}
+                        width={24}
+                        strokeWidth={1}
+                        color="#35383D"
+                        cursor='pointer'
+                    />
+                </Link>
                 <ShoppingBagIcon 
                     height={24}
                     width={24}

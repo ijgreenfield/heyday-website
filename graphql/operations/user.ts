@@ -4,7 +4,7 @@ export default {
     Queries: {
         getUser: gql`
             query getUser($token: String!) {
-                customer(token: $token) {
+                customer(customerAccessToken: $token) {
                     id
                     firstName
                     lastName
