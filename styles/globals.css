@@ -19,7 +19,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: 'Cadiz Regular';
-  color: #35383D;
+  color: #333f48;
   font-size: 16px;
   line-height: 24px;
   font-weight: 200;
@@ -43,6 +43,7 @@ h2 {
 h3 {
   font-size: 32px;
   line-height: 40px;
+  margin: .625rem 0;
 }
 
 h4 {

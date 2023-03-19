@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import UserNav from '../../molecules/UserNav'
-import { Bars2Icon } from '@heroicons/react/24/outline'
 import AnnouncementBar from "../../molecules/AnnouncementBar";
 import Link from "next/link";
 import Container from "../../atoms/Container";
-import Sidebar from '../../molecules/Sidebar'
 import SearchWrapper from "@/components/organisms/ProductSearch/SearchWrapper";
+import HamburgerIcon from '../../../public/icons/HamburgerIcon'
 
 export default function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -31,13 +30,7 @@ export default function Header() {
                             <div className="md:flex gap-12 text-sm hidden">
                                 {Links.map(link => <p key={link.name}>{link.name}</p>)}
                             </div>
-                            <Bars2Icon 
-                                height={24}
-                                width={24}
-                                strokeWidth={1}
-                                color="#35383D"
-                                className="md:hidden"
-                            />
+                            <HamburgerIcon />
                             {/*<Sidebar isOpen={isOpen} onDismiss={onDismiss}/>*/}
                         </div>
                         <div className="flex grow justify-center basis-0">

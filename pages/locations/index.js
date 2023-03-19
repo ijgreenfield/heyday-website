@@ -2,6 +2,7 @@ import { builder } from "@builder.io/react"
 import LocationCard from "../../components/organisms/Locations/LocationCard";
 import Head from "next/head";
 import ShopMap from "../../components/organisms/Locations/Map";
+import Container from "../../components/atoms/Container";
 
 export default function Locations({ location }) {
     const results = location.reduce((x, y) => {
@@ -29,18 +30,20 @@ export default function Locations({ location }) {
                 </div>
             </div>
             <div className='max-w-7xl mx-auto py-16'>
-                {Object.keys(results).sort().map((key, i) => (
-                    <div key={key} className='flex flex-col gap-8 pb-8 mb-12 border-b border-[#333f48]'>
-                        <h3>{key}</h3>
-                        <div className="grid grid-cols-3 gap-8">
-                            {results[key].map(shop => {
-                                return (
-                                    <LocationCard shop={shop}/>
-                                )
-                            }).sort()}
+                <Container>
+                    {Object.keys(results).sort().map((key, i) => (
+                        <div key={key} className='flex flex-col gap-8 pb-8 mb-12 border-b border-[#333f48]'>
+                            <h3 className="text-[2rem] my-2.5">{key}</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                {results[key].map(shop => {
+                                    return (
+                                        <LocationCard shop={shop}/>
+                                    )
+                                }).sort()}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </Container>
             </div>
         </div>
     </div>
