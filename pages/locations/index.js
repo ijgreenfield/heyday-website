@@ -11,7 +11,6 @@ export default function Locations({ location }) {
         return x;
     }, {});
 
-
   return (
     <div>
         <Head>

@@ -57,9 +57,18 @@ a {
   text-decoration: none;
 }
 
+input {
+  border-radius: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
 input:focus {
   outline: none;
 }
+
 
 @media (prefers-color-scheme: dark) {
   html {

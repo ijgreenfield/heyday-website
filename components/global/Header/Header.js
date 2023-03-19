@@ -23,7 +23,7 @@ export default function Header() {
     return (
         <div className="">
             <AnnouncementBar />
-            <header className="py-3 border-b border-black md:py-4">
+            <header className="py-2 border-b border-black md:py-4">
                 <Container>
                     <div className="flex items-center">
                         <div className="flex grow justify-start basis-0">
