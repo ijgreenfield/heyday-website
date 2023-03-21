@@ -30,7 +30,7 @@ export default function Header() {
                             <div className="md:flex gap-12 text-sm hidden">
                                 {Links.map(link => <p key={link.name}>{link.name}</p>)}
                             </div>
-                            <HamburgerIcon />
+                            <HamburgerIcon className='md:hidden'/>
                             {/*<Sidebar isOpen={isOpen} onDismiss={onDismiss}/>*/}
                         </div>
                         <div className="flex grow justify-center basis-0">

@@ -5,6 +5,7 @@ import { Disclosure } from '@headlessui/react'
 import { ChevronUpIcon, PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
 import Container from '../../components/atoms/Container'
 import Image from 'next/image'
+import Head from 'next/head'
 
 const questions = [
     {
@@ -37,7 +38,7 @@ const questions = [
     },
 ]
 
-export default function LocationTemplate(location) {
+export default function LocationTemplate({location}) {
 
   const router = useRouter()
   if (!router.isFallback && !location) {
@@ -46,6 +47,10 @@ export default function LocationTemplate(location) {
 
   return (
     <div>
+        <Head>
+            <title>{location.name} | Heyday Skincare</title>
+        </Head>
+        <div>
         {/* What to Expect */}
         <section className='pt-[45px]'>
             <Container>
@@ -127,6 +132,7 @@ export default function LocationTemplate(location) {
                 </div>
             </Container>
         </section>
+    </div>
     </div>
   )
 }

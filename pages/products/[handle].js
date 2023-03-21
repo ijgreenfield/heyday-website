@@ -1,14 +1,16 @@
 import ImageCarousel from '../../components/molecules/ImageCarousel'
-import {
-  getAllProductPaths
-} from '../../lib/shopify/operations'
+import { getAllProductPaths} from '../../lib/shopify/operations'
 import { getProduct } from '../../lib/shopify/index'
 import Container from '../../components/atoms/Container';
-import Review from '../../components/organisms/ProductReviews/Review';
 import { Disclosure, Listbox  } from '@headlessui/react';
 import { useRouter } from 'next/router';
+import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
 import Head from 'next/head';
 import { getProductReviews } from '../../lib/yotpo/operations';
+import RatingsUI from '../../components/GenUI/Ratings';
+import TreatmentTip from '../../components/Product/ProductDetails/TreatmentTip';
+import ProductReviews from '../../components/Product/ProductDetails/ProductReviews';
+import HowWeUse from '../../components/Product/ProductDetails/HowWeUse';
 
 
 const people = [
@@ -22,6 +24,8 @@ const people = [
 export default function ProductPage({ product, reviews }) {
     const splitId = product.id.split('Product/')
     const images = product.images.edges;
+
+    console.log(product)
 
     const sampleIngredients = [
       { name: `${product.keyIngOneName?.value}`,
@@ -57,7 +61,7 @@ export default function ProductPage({ product, reviews }) {
         <div className='py-6 pb-12'>
           <Container>
             <div className='border-[#c2c6c9] border-b pb-6'>
-              <div className='mt-3.5 mb-7'>
+              <div className='mb-7'>
                 <span className='uppercase'>{product.vendor}</span>
               </div>
               <div className='flex flex-col gap-3 mb-4'>
@@ -65,26 +69,21 @@ export default function ProductPage({ product, reviews }) {
                 <p className='text-lg'>{product.shortDescription?.value}</p>
               </div>
               <div className='flex gap-x-2'>
-                {/*<ReactStars 
-                  count={5}
-                  value={5}
-                  size={16}
-                />*/}
-                <span>2 Reviews</span>
+                <RatingsUI />
               </div>
             </div>
 
             <div className='mt-4 mb-12 flex flex-col gap-4'>
               <div className='flex gap-x-2'>
-                <p className=''>Good For:</p>
-                <span>All Skin Types</span>
+                <p className='font-medium'>Good For:</p>
+                <span>{product.skinType.value}</span>
               </div>
               <div className='flex w-full '>
-                <div className='border border-black border-r-0 shrink p-4'>
+                <div className='border border-black border-r-0 shrink'>
                 {/* Refactor This to Sep. Component*/}
                 <Listbox>
-                  <Listbox.Button>10oz</Listbox.Button>
-                  <Listbox.Options className='absolute mt-1 max-h-60  overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
+                  <Listbox.Button className='p-4'>10oz</Listbox.Button>
+                  <Listbox.Options className='absolute mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
                     {people.map((person) => (
                       <Listbox.Option
                         key={person.id}
@@ -103,21 +102,33 @@ export default function ProductPage({ product, reviews }) {
 
             <div className='flex flex-col gap-y-6'>
               <div>
-                <p className='text-lg'>{product?.description}</p>
+                <p className=''>{product?.description}</p>
               </div>
               <div>
                 <span className='pb-2.5 font-bold'>The Ingredients That Make A Difference</span>
                 <div>
                   {sampleIngredients.map(ing => (
                     <Disclosure key={ing?.name}>
+                      {({ open }) => (
                       <div className='border-b border-[#333f48]'>
-                        <Disclosure.Button className="py-4 text-lg">
-                          {ing?.name}
+                        <Disclosure.Button className="py-4 text-lg flex justify-between w-full items-center">
+                          <span>{ing?.name}</span>
+                          {open ? 
+                                    <MinusIcon
+                                    className={`${
+                                        open ? 'rotate-180 transform' : ''
+                                    } h-5 w-5`} /> : 
+                                    <PlusIcon
+                                    className={`${
+                                        open ? 'rotate-180 transform' : ''
+                                    } h-5 w-5`} />
+                                }
                         </Disclosure.Button>
-                        <Disclosure.Panel className="text-gray-500 py-4">
+                        <Disclosure.Panel className="text-[#333f48] py-4">
                           {ing?.description}
                         </Disclosure.Panel>
                       </div>
+                      )}
                     </Disclosure>
                   ))}
                 </div>
@@ -127,42 +138,13 @@ export default function ProductPage({ product, reviews }) {
         </div>
 
         {/* How We Use It */}
-        <div className='bg-[#f8f4f0] py-10'>
-          <Container>
-            <div className='border-b border-[#c2c6c9]'>
-              <div>
-                <span>How We Use It</span>
-              </div>
-              <div className='flex flex-col gap-3 py-8'>
-                <h3>Morning And Night</h3>
-                <p>Apply a few drops to clean, toned skin, focusing on areas that you feel need a bit of extra attention.</p>
-              </div>
-            </div>
-          </Container>
-        </div>
+        <HowWeUse product={product} />
 
         {/* Treatment Room Tip */}
-        <div className='bg-[#333f48] text-white py-10'>
-          <Container>
-            { product.treatmentRoomCopy?.value || 'null' ?
-              <div className='text-center flex flex-col gap-y-14'>
-              <span>• FROM THE TREATMENT ROOM •</span>
-              <p className='text-2xl'>{product.treatmentRoomCopy?.value}</p>
-            </div>
-            : "hi"
-            }
-          </Container>
-        </div>
+        <TreatmentTip product={product}/>
 
         {/* Reviews */}
-        <Container>
-          {reviews?.reviews.map(review => {
-            const { user } = review;
-            return (
-              <Review review={review} user={user} key={review.id} />
-            )
-          })}
-        </Container>
+        <ProductReviews reviews={reviews}/>
       </div>
       </>
     )
