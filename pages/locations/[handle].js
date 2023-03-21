@@ -41,7 +41,7 @@ const questions = [
 export default function LocationTemplate({location}) {
 
   const router = useRouter()
-  if (!router.isFallback && !location) {
+  if (router.isFallback && !location) {
     return <ErrorPage statusCode={404} />
   }
 
