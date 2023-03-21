@@ -48,7 +48,7 @@ export default function LocationTemplate({location}) {
   return (
     <div>
         <Head>
-            <title>{location.name} | Heyday Skincare</title>
+            <title>{location?.name} | Heyday Skincare</title>
         </Head>
         <div>
         {/* What to Expect */}
