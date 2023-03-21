@@ -25,8 +25,6 @@ export default function ProductPage({ product, reviews }) {
     const splitId = product.id.split('Product/')
     const images = product.images.edges;
 
-    console.log(product)
-
     const sampleIngredients = [
       { name: `${product.keyIngOneName?.value}`,
         description: `${product.keyIngOneInfo?.value}`
@@ -76,7 +74,7 @@ export default function ProductPage({ product, reviews }) {
             <div className='mt-4 mb-12 flex flex-col gap-4'>
               <div className='flex gap-x-2'>
                 <p className='font-medium'>Good For:</p>
-                <span>{product.skinType.value}</span>
+                <span>{product.skinType?.value}</span>
               </div>
               <div className='flex w-full '>
                 <div className='border border-black border-r-0 shrink'>
