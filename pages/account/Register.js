@@ -1,21 +1,39 @@
 import React from 'react'
 import Head from 'next/head'
 import { useFormik } from 'formik'
+import UserOperations from '../../graphql/operations/user'
+import { useMutation } from '@apollo/client'
+import { useRouter } from 'next/router'
 
 export default function Register() {
+  const [createCustomer, { data, loading, error}] = useMutation(UserOperations.Mutations.customerCreate)
+  const { push } = useRouter();
+
   const formik = useFormik({
     initialValues: {
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: '',
+      firstName: '',
+      lastName: ''
     },
     onSubmit: async values => {
-      const res = await signIn('credentials', {
-        redirect: false,
-        email: values.email,
-        password: values.password,
-      });
+      try {
+        const res = await createCustomer({ variables: { input: {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          password: values.password
+  
+        }}})
+        push('/account')
+
+      } catch (error) {
+        console.log(error)
+      }
     }
-  })
+  },
+  )
   return (
     <div>
           <Head>
@@ -49,19 +67,19 @@ export default function Register() {
                           <input type="password" name='password' placeholder='••••••••••' className='border-b border-[#c6a992] py-2.5' onChange={formik.handleChange} value={formik.values.password}/>
                         </div>
                         <div className='flex flex-col mt-10'>
-                          <label className='text-xs text-[#989ea3]' htmlFor='password'>Confirm Password</label>
-                          <input type="password" name='password' placeholder='••••••••••' className='border-b border-[#c6a992] py-2.5' onChange={formik.handleChange} value={formik.values.password}/>
+                          <label className='text-xs text-[#989ea3]' htmlFor='confirmPassword'>Confirm Password</label>
+                          <input type="password" name='confirmPassword' placeholder='••••••••••' className='border-b border-[#c6a992] py-2.5' onChange={formik.handleChange} value={formik.values.confirmPassword}/>
                         </div>
                       </div>
 
                       <div className='flex flex-col'>
                         <div className='flex flex-col mt-10'>
                           <label className='text-xs text-[#989ea3]' htmlFor='password'>First Name</label>
-                          <input type="text" name='firstName' placeholder='First Name' className='border-b border-[#c6a992] py-2.5' onChange={formik.handleChange} value={formik.values.password}/>
+                          <input type="text" name='firstName' placeholder='First Name' className='border-b border-[#c6a992] py-2.5' onChange={formik.handleChange} value={formik.values.firstName}/>
                         </div>
                         <div className='flex flex-col mt-10'>
                           <label className='text-xs text-[#989ea3]' htmlFor='lastName'>Last Name</label>
-                          <input type="text" name='lastName' placeholder='Last Name' className='border-b border-[#c6a992] py-2.5' onChange={formik.handleChange} value={formik.values.password}/>
+                          <input type="text" name='lastName' placeholder='Last Name' className='border-b border-[#c6a992] py-2.5' onChange={formik.handleChange} value={formik.values.lastName}/>
                         </div>
                       </div>
 

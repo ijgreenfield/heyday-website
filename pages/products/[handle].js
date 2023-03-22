@@ -22,7 +22,6 @@ const people = [
 ]
 
 export default function ProductPage({ product, reviews }) {
-    const splitId = product.id.split('Product/')
     const images = product.images.edges;
 
     const sampleIngredients = [
@@ -39,6 +38,8 @@ export default function ProductPage({ product, reviews }) {
         description: `${product.fullIngList?.value}`
       },
     ]
+
+    console.log(reviews)
 
     const router = useRouter()
     if (!router.isFallback && !product) {
@@ -150,8 +151,9 @@ export default function ProductPage({ product, reviews }) {
 
 export async function getStaticProps({params}) {
     const { body } = await getProduct(params?.handle)
-    const { response }= await getProductReviews('10785253775')
     const product = body.data.product;
+    const splitId = product.id.split('Product/')
+    const { response }= await getProductReviews(splitId[1])
     const reviews = response;
 
     return {

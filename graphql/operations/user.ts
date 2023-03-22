@@ -26,6 +26,24 @@ export default {
                     }
                 }
             }
+        `,
+        customerCreate: gql`
+            mutation customerCreate($input: CustomerCreateInput!) {
+            customerCreate(input: $input) {
+                customer {
+                    id
+                    firstName
+                    lastName
+                    email
+                    phone
+                }
+                customerUserErrors {
+                    field
+                    message
+                    code
+                }
+            }
+            }
         `
     },
     Subscriptions: {},
