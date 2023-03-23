@@ -15,7 +15,7 @@ export default function ShopMap() {
       mapboxAccessToken='pk.eyJ1IjoiaWFuZ3JlZW5maWVsZCIsImEiOiJjbDc3bG81M3IwMTBrM3ZvMDNndXVnc2dtIn0.JAWryaayiF24fXmDpXPD2A'
       style={{height: '100%', width: '100%'}}
       mapStyle="mapbox://styles/iangreenfield/cl77lumgc000216maao0ew2ib"
-      zoom={6}
+      zoom={4}
     >
         <GeolocateControl ref={geolocateControlRef} trackUserLocation={true}/>
     </Map>
