@@ -8,6 +8,7 @@ import { SessionProvider } from "next-auth/react"
 import { ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client';
 import client from '../graphql/apollo-client'
 import { ChakraProvider } from '@chakra-ui/react';
+import theme from '../chakra/theme'
 
 const BUILDER_API_KEY = 'ea37859a8c60492897e611f94cbde782'
 builder.init(BUILDER_API_KEY)
@@ -17,7 +18,7 @@ export default function App({ Component, pageProps: {session, ...pageProps} }: A
   return (
     <SessionProvider session={session}>
       <ApolloProvider client={client}>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <Layout>
             <Script async src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UFdULB' />
             <Component {...pageProps} />

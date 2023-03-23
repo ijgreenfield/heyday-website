@@ -1,11 +1,11 @@
 import React from 'react'
-import { builder } from "@builder.io/react"
-import { useRouter } from 'next/router'
+import { builder, BuilderComponent } from "@builder.io/react"
 import { Disclosure } from '@headlessui/react'
-import { ChevronUpIcon, PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
+import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
 import Container from '../../components/atoms/Container'
 import Image from 'next/image'
 import Head from 'next/head'
+import { VStack, Box, Heading, Stack, Text, Button } from '@chakra-ui/react'
 
 const questions = [
     {
@@ -51,88 +51,113 @@ export default function LocationTemplate({location}) {
             <title>{location?.name} | Heyday Skincare</title>
         </Head>
         <div>
-        {/* What to Expect */}
-        <section className='pt-[45px]'>
-            <Container>
-                <div className='text-center mb-8'>
-                    <h2 className='text-2xl'>What to Expect</h2>
-                </div>
-                <div className='rounded-3xl overflow-hidden text-center text-white'>
-                    <div className='relative h-[460px] w-full'>
+            <BuilderComponent
+                
+                model="shop-hero" 
+            />
+
+            <Box>
+                <Stack>
+                    <Box position='relative' width='100%' height='20rem' bg='#e3c5af'>
                         <Image 
-                            src='https://cdn.shopify.com/s/files/1/1704/8471/files/Group_1003_282f5d13-ca0f-44c2-8419-0762b3518122_720x.png?v=1651825933'
+                            src='https://res.cloudinary.com/dinn28die/image/upload/v1679575021/Image2_900x_a0whr6.webp'
                             fill
-                            alt='Heyday Facials Image Collage'
                         />
+                    </Box>
+                    <Box backgroundImage='https://res.cloudinary.com/dinn28die/image/upload/v1679575977/Rectangle_477_mlhnwu.webp' backgroundPosition='bottom 0% left 30%' width='100%' height='auto' margin='0 !important' padding='2.5rem 0'>
+                        <Container>
+                            <VStack textAlign='center' gap='4'>
+                                <Heading>Who We Are</Heading>
+                                <Text>Heyday is taking the facial out of the spa and bringing it into your life, to create everyday expert skincare that empowers you to be your best self.</Text>
+                                <Button bg='#105368' color='#fff' padding='.6875rem 1.875rem'>Meet Heyday</Button>
+                            </VStack>
+                        </Container>
+                    </Box>
+                </Stack>
+            </Box>
+
+            {/* What to Expect */}
+            <section className='pt-[45px]'>
+                <Container>
+                    <div className='text-center mb-8'>
+                        <h2 className='text-2xl'>What to Expect</h2>
                     </div>
-                    <div className='bg-[#b0654d] py-10 px-4'>
-                        <div className='flex flex-col gap-14'>
-                            <div>
-                                <h4 className='text-[22px] mb-2.5'>Inviting Spaces</h4>
-                                <p>A modern vibe built for convenience and conversation.</p>
+                    <div className='rounded-3xl overflow-hidden text-center text-white'>
+                        <div className='relative h-[460px] w-full'>
+                            <Image 
+                                src='https://cdn.shopify.com/s/files/1/1704/8471/files/Group_1003_282f5d13-ca0f-44c2-8419-0762b3518122_720x.png?v=1651825933'
+                                fill
+                                alt='Heyday Facials Image Collage'
+                            />
+                        </div>
+                        <div className='bg-[#b0654d] py-10 px-4'>
+                            <div className='flex flex-col gap-14'>
+                                <div>
+                                    <h4 className='text-[22px] mb-2.5'>Inviting Spaces</h4>
+                                    <p>A modern vibe built for convenience and conversation.</p>
+                                </div>
+                                <div>
+                                    <h4 className='text-[22px] mb-2.5'>Professional Consultations</h4>
+                                    <p>An expert esthetician dedicated to your skincare goals and routine.</p>
+                                </div>
+                                <div>
+                                    <h4 className='text-[22px] mb-2.5'>Personalized Services</h4>
+                                    <p>Professional treatments catered to your skincare goals & needs.</p>
+                                </div>
+                                <div>
+                                    <h4 className='text-[22px] mb-2.5'>Curated Recommendations</h4>
+                                    <p>Enhance your routine with today’s leading independent brands.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4 className='text-[22px] mb-2.5'>Professional Consultations</h4>
-                                <p>An expert esthetician dedicated to your skincare goals and routine.</p>
-                            </div>
-                            <div>
-                                <h4 className='text-[22px] mb-2.5'>Personalized Services</h4>
-                                <p>Professional treatments catered to your skincare goals & needs.</p>
-                            </div>
-                            <div>
-                                <h4 className='text-[22px] mb-2.5'>Curated Recommendations</h4>
-                                <p>Enhance your routine with today’s leading independent brands.</p>
+                            <div className='mt-14'>
+                                <button className='bg-white text-[#333f48] font-medium py-2.5 px-7 max-w-[220px] w-full border border-[#333f48] rounded-md'>Get in Early</button>
                             </div>
                         </div>
-                        <div className='mt-14'>
-                            <button className='bg-white text-[#333f48] font-medium py-2.5 px-7 max-w-[220px] w-full border border-[#333f48] rounded-md'>Get in Early</button>
-                        </div>
                     </div>
-                </div>
-            </Container>
-        </section>
-        {/* End What to Expect */}
+                </Container>
+            </section>
+            {/* End What to Expect */}
 
-        <section>
-            <Container>
-                <div className='klaviyo-form-UGktK4 klaviyo-form form-version-cid-3'></div>
-            </Container>
-        </section>
+            <section>
+                <Container>
+                    <div className='klaviyo-form-UGktK4 klaviyo-form form-version-cid-3'></div>
+                </Container>
+            </section>
 
-        <section className='py-16 bg-[url(https://cdn.shopify.com/s/files/1/1704/8471/files/FAQ.webp?v=1679253741)] bg-top'>
-            <Container>
-                <div className='mb-8 text-center'>
-                    <h2 className='text-2xl'>Questions? <br />Get the Answers.</h2>
-                </div>
-                <div>
-                {questions.map(question => (
-                    <Disclosure as="div" className="border-t border-[#333f48] z-10">
-                        {({ open }) => (
-                            <>
-                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-4 text-left focus:outline-none ">
-                                {open ? 
-                                    <MinusIcon
-                                    className={`${
-                                        open ? 'rotate-180 transform' : ''
-                                    } h-5 w-5`} /> : 
-                                    <PlusIcon
-                                    className={`${
-                                        open ? 'rotate-180 transform' : ''
-                                    } h-5 w-5`} />
-                                }
-                                <span className='block ml-2.5 font-medium'>{question.title}</span>
-                            </Disclosure.Button>
-                            <Disclosure.Panel className="py-4">
-                                {question.answer}
-                            </Disclosure.Panel>
-                            </>
-                        )}
-                    </Disclosure>
-                ))}
-                </div>
-            </Container>
-        </section>
-    </div>
+            <section className='py-16 bg-[url(https://cdn.shopify.com/s/files/1/1704/8471/files/FAQ.webp?v=1679253741)] bg-top'>
+                <Container>
+                    <div className='mb-8 text-center'>
+                        <h2 className='text-2xl'>Questions? <br />Get the Answers.</h2>
+                    </div>
+                    <div>
+                    {questions.map(question => (
+                        <Disclosure as="div" className="border-t border-[#333f48] z-10">
+                            {({ open }) => (
+                                <>
+                                <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-4 text-left focus:outline-none ">
+                                    {open ? 
+                                        <MinusIcon
+                                        className={`${
+                                            open ? 'rotate-180 transform' : ''
+                                        } h-5 w-5`} /> : 
+                                        <PlusIcon
+                                        className={`${
+                                            open ? 'rotate-180 transform' : ''
+                                        } h-5 w-5`} />
+                                    }
+                                    <span className='block ml-2.5 font-medium'>{question.title}</span>
+                                </Disclosure.Button>
+                                <Disclosure.Panel className="py-4">
+                                    {question.answer}
+                                </Disclosure.Panel>
+                                </>
+                            )}
+                        </Disclosure>
+                    ))}
+                    </div>
+                </Container>
+            </section>
+        </div>
     </div>
   )
 }

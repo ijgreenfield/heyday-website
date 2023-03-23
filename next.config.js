@@ -8,7 +8,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "cdn.shopify.com"
+      "cdn.shopify.com",
+      "res.cloudinary.com"
     ]
   }
 }
