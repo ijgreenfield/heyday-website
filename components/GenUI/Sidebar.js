@@ -25,7 +25,7 @@ import {
                 size='full'
             >
                 <DrawerOverlay />
-                <DrawerContent bg='#f8f4f0' px='1rem'>
+                <DrawerContent bg='#f8f4f0'>
                     <DrawerCloseButton />
                     <Box>
                         {children}

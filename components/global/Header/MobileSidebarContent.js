@@ -16,7 +16,7 @@ import React from 'react'
 
 export default function MobileSidebarContent() {
   return (
-    <Box>
+    <Box px='1.5rem'>
         <Box h='auto' display='flex' justifyContent='center' py='16px'>
             <Box pos='relative' w='4rem' h='2rem'>
                 <Image 
