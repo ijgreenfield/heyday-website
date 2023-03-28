@@ -6,9 +6,14 @@ import Link from "next/link";
 import Container from "../../atoms/Container";
 import SearchWrapper from "@/components/organisms/ProductSearch/SearchWrapper";
 import HamburgerIcon from '../../../public/icons/HamburgerIcon'
+import Sidebar from '../../GenUI/Sidebar'
+import { Box, DrawerBody, Text } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
+import MobileSidebarContent from '../../global/Header/MobileSidebarContent'
 
 export default function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false)
+    const { isOpen, onClose, onOpen } = useDisclosure()
     const onSearchOpen = () => setIsSearchOpen(true)
     const onSearchClose = () => setIsSearchOpen(false)
 
@@ -30,7 +35,10 @@ export default function Header() {
                             <div className="md:flex gap-12 text-sm hidden">
                                 {Links.map(link => <p key={link.name}>{link.name}</p>)}
                             </div>
-                            <HamburgerIcon className='md:hidden'/>
+                            <HamburgerIcon className='md:hidden' onClick={() => onOpen()}/>
+                            <Sidebar placement='left' onOpen={onOpen} isOpen={isOpen} onClose={onClose}>
+                                <MobileSidebarContent />
+                            </Sidebar>
                             {/*<Sidebar isOpen={isOpen} onDismiss={onDismiss}/>*/}
                         </div>
                         <div className="flex grow justify-center basis-0">

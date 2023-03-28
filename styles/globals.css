@@ -26,6 +26,10 @@ body {
   font-weight: 200;
 }
 
+p {
+  font-family: 'Cadiz Regular';
+}
+
 h1, h2, h3, h4 {
   font-family: 'Tobias';
   font-weight: 500;
