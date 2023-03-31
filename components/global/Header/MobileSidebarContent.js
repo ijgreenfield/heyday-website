@@ -31,7 +31,7 @@ export default function MobileSidebarContent() {
                 <InputLeftElement
                     children={<SearchIcon />}
                 />
-                <Input type='text' placeholder='Search' bg='white' borderRadius='0'/>
+                <Input type='text' placeholder='Search' bg='white' borderRadius='0' border='none'/>
             </InputGroup>
         </Box>
         <Box>
