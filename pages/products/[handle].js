@@ -10,7 +10,7 @@ import { getProductReviews } from '../../lib/yotpo/operations';
 import RatingsUI from '../../components/GenUI/Ratings';
 import TreatmentTip from '../../components/Product/ProductDetails/TreatmentTip';
 import ProductReviews from '../../components/Product/ProductDetails/ProductReviews';
-import HowWeUse from '../../components/Product/ProductDetails/HowWeUse';
+import HowWeUse from '../../components/Product/ProductDetails/HowWeUse/HowWeUse';
 
 
 const people = [
