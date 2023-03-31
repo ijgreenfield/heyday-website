@@ -37,8 +37,9 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Tobias';
-  font-weight: 500;
+  font-family: 'Playfair Display';
+  color: #333f48;
+  font-weight: 400;
 }
 
 h1 {
