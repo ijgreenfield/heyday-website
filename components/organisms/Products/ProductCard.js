@@ -10,16 +10,16 @@ export default function ProductCard({ product }) {
             </div>
             <div className="flex flex-col grow">
                 <div className="grow">
-                    <div>
-                        <span className="uppercase text-[.625rem] tracking-wider">{product.vendor}</span>
-                        <p className="text-xs md:text-lg font-extralight min-h-[56px]">{product.title}</p>
+                    <div className="mt-[.5rem]">
+                        <span className="uppercase text-[.625rem] tracking-wider font-maison-mono tracking-[.07em]">{product.vendor}</span>
+                        <p className="pt-2.5 text-xs md:text-lg font-extralight min-h-[56px]">{product.title}</p>
                     </div>
                 </div>
                 <div className="mb-2.5">
                     <RatingsUI />
                 </div>
                 <div className="">
-                    <button className="py-1 md:py-2.5 border border-[#333f48] w-full text-center text-[.625rem] md:text-sm">Add to Cart - ${product.variants[0].price.amount}</button>
+                    <button className="font-maison-mono py-2 md:py-2.5 border border-[#333f48] w-full text-center text-[.625rem] md:text-sm">Add to Cart - ${product.variants[0].price.amount}</button>
                 </div>
             </div>
         </Link>

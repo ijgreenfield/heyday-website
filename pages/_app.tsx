@@ -5,7 +5,7 @@ import Layout from '../components/global/Layout'
 import type { AppProps } from 'next/app'
 import Script from 'next/script';
 import { SessionProvider } from "next-auth/react"
-import { ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client';
+import { ApolloProvider} from '@apollo/client';
 import client from '../graphql/apollo-client'
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from '../chakra/theme'

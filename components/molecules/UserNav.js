@@ -19,10 +19,10 @@ export default function UserNav({onSearchOpen}) {
                     <UserIcon />
                 </Link>
                 <CartIcon onClick={onOpen}/>
-                <Sidebar placement='right' onOpen={onOpen} isOpen={isOpen} onClose={onClose}>
+            </div>
+            <Sidebar placement='right' onOpen={onOpen} isOpen={isOpen} onClose={onClose}>
                     <CartSidebar />
                 </Sidebar>
-            </div>
         </div>
     )
 }

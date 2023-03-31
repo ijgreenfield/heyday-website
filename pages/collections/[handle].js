@@ -8,7 +8,7 @@ export default function Handle({collection}) {
         <Container>
           <div className="py-9 max-w-7xl mx-auto md:py-8">
               <div>
-                  <h2 className="text-[2rem]">{collection.title}</h2>
+                  <h2 className="text-[2rem] mb-2.5">{collection.title}</h2>
                   <p>{collection.description}</p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mt-12">

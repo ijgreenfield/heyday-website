@@ -8,6 +8,16 @@
   src: url('../public/fonts/Tobias-Regular.woff2');
 }
 
+@font-face {
+  font-family: 'MaisonNeue Mono';
+  src: url('/fonts/MaisonNeueMono/MaisonNeueMono.woff2');
+}
+
+@font-face {
+  font-family: 'MaisonNeue Book';
+  src: url('/fonts/MaisonNeue/MaisonNeueBook.woff2');
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -18,16 +28,12 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Cadiz Regular';
+  font-family: 'MaisonNeue Book';
   color: #333f48;
   background-color: #fff;
   font-size: 16px;
   line-height: 24px;
   font-weight: 200;
-}
-
-p {
-  font-family: 'Cadiz Regular';
 }
 
 h1, h2, h3, h4 {
