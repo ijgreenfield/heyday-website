@@ -52,7 +52,7 @@ export default function ProductPage({ product, reviews }) {
         <title>{product.seo?.title}</title>
         <meta name="description" content={product.seo?.description}></meta>
       </Head>
-      <div className=''>
+      <div className='font-maison'>
         <div className='h-96 w-full relative'>
           <ImageCarousel images={images}/>
         </div>
@@ -60,11 +60,11 @@ export default function ProductPage({ product, reviews }) {
         <div className='py-6 pb-12'>
           <Container>
             <div className='border-[#c2c6c9] border-b pb-6'>
-              <div className='mb-7'>
-                <span className='uppercase'>{product.vendor}</span>
+              <div className='mb-5'>
+                <span className='uppercase font-maison-mono text-sm'>{product.vendor}</span>
               </div>
               <div className='flex flex-col gap-3 mb-4'>
-                <h3>{product.title}</h3>
+                <h3 className='text-[2rem]'>{product.title}</h3>
                 <p className='text-lg'>{product.shortDescription?.value}</p>
               </div>
               <div className='flex gap-x-2'>
@@ -73,8 +73,8 @@ export default function ProductPage({ product, reviews }) {
             </div>
 
             <div className='mt-4 mb-12 flex flex-col gap-4'>
-              <div className='flex gap-x-2'>
-                <p className='font-medium'>Good For:</p>
+              <div className='flex gap-x-2 text-sm'>
+                <p className='font-bold'>Good For:</p>
                 <span>{product.skinType?.value}</span>
               </div>
               <div className='flex w-full '>
@@ -95,16 +95,16 @@ export default function ProductPage({ product, reviews }) {
                   </Listbox.Options>
                 </Listbox>
                 </div>
-                <button className='border border-black flex-1'>Add to Cart - $75</button>
+                <button className='border border-black flex-1 font-maison-mono'>Add to Cart - $75</button>
               </div>
             </div>
 
             <div className='flex flex-col gap-y-6'>
               <div>
-                <p className=''>{product?.description}</p>
+                <p className='leading-6'>{product?.description}</p>
               </div>
               <div>
-                <span className='pb-2.5 font-bold'>The Ingredients That Make A Difference</span>
+                <span className='text-sm pb-2.5 font-bold'>The Ingredients That Make A Difference</span>
                 <div>
                   {sampleIngredients.map(ing => (
                     <Disclosure key={ing?.name}>
@@ -123,7 +123,7 @@ export default function ProductPage({ product, reviews }) {
                                     } h-5 w-5`} />
                                 }
                         </Disclosure.Button>
-                        <Disclosure.Panel className="text-[#333f48] py-4">
+                        <Disclosure.Panel className="text-sm text-[#333f48] py-4">
                           {ing?.description}
                         </Disclosure.Panel>
                       </div>
